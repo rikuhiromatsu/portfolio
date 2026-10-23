@@ -1,0 +1,50 @@
+---
+import { site } from '../data/site';
+
+const nav = [
+  { label: '頼めること', href: '#services' },
+  { label: 'つくっているもの', href: '#making' },
+  { label: 'お知らせ', href: '#news' },
+];
+---
+
+<header class="header container">
+  <a href="#top" class="logo">{site.name}</a>
+  <nav aria-label="ページ内">
+    <ul class="nav">
+      {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .logo {
+    font-family: var(--font-en);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .nav a {
+    text-decoration: none;
+  }
+</style>

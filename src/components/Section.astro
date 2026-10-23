@@ -1,0 +1,30 @@
+---
+// 罫線 + 小見出しのセクション枠。中身は slot に入れる
+interface Props {
+  id: string;
+  label: string;
+}
+
+const { id, label } = Astro.props;
+---
+
+<section id={id} class="section">
+  <h2 class="label">{label}</h2>
+  <slot />
+</section>
+
+<style>
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 48px 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-sub);
+  }
+</style>

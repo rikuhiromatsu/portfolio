@@ -1,0 +1,53 @@
+:root {
+  --color-bg: #fafaf7;
+  --color-ink: #141414;
+  --color-sub: #5e5e5e;
+  --color-line: #e3e2dc;
+  --color-placeholder: #ecebe5;
+  --font-ja: 'Noto Sans JP', sans-serif;
+  --font-en: 'Inter', 'Noto Sans JP', sans-serif;
+  --container: 640px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-ja);
+  font-size: 15px;
+  line-height: 1.9;
+  word-break: auto-phrase; /* 日本語を文節で折り返す（Chrome 系） */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--color-sub);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
