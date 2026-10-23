@@ -1,0 +1,36 @@
+---
+import Section from './Section.astro';
+import { services } from '../data/site';
+---
+
+<Section id="services" label="頼めること">
+  <div class="list">
+    {
+      services.map((service) => (
+        <div class="item">
+          <h3>{service.title}</h3>
+          <p>{service.body}</p>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+---
+
+<footer class="footer container">
+  <small>© {new Date().getFullYear()} {site.name}</small>
+  <ul class="links">
+    {site.links.map((link) => <li><a href={link.url}>{link.label}</a></li>)}
+  </ul>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    font-family: var(--font-en);
+    font-size: 12px;
+    color: var(--color-sub);
+  }
+
+  small {
+    font-size: inherit;
+  }
+
+  .links {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+  }
+</style>
